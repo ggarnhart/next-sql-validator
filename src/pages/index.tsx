@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useState } from "react";
 import { format } from "sql-formatter";
-import { Result } from "../../Components/Result";
+import { Result } from "../../components/Result";
 import Link from "next/link";
 
 interface ResultInterface {
@@ -18,6 +18,7 @@ export default function Home() {
 
   const validateSql = () => {
     const languages = [
+      "snowflake",
       "sql",
       "bigquery",
       "db2",
@@ -29,7 +30,6 @@ export default function Home() {
       "postgresql",
       "redshift",
       "singlestoredb",
-      "snowflake",
       "spark",
       "sqlite",
       "tsql",
@@ -86,7 +86,8 @@ export default function Home() {
                 }}
                 className="px-4 py-2 my-2 text-white rounded cursor-pointer bg-slate-800"
               >
-                Submit
+                {editing && "Submit"}
+                {!editing && "Loading"}
               </button>
             </>
           )}
