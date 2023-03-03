@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useState } from "react";
 import { format } from "sql-formatter";
-import { Result } from "../../components/Result";
+import { Result } from "../../Components/Result";
 import Link from "next/link";
 
 interface ResultInterface {
